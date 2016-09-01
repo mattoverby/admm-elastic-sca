@@ -1,0 +1,3 @@
+[submodule "deps/admm-elastic"]
+	path = deps/admm-elastic
+	url = https://github.com/mattoverby/admm-elastic.git
