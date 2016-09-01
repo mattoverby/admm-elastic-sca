@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<mclScene>
+
+	<Object name="dillo" type="tetmesh" >
+		<File value="dillo919" />
+		<scale value=".01 .01 .01" />
+		<Material value="greenplastic" />
+		<Mass value="140" />
+		<density_weighted_mass value="0" />
+		<Force value="nhtet" />
+	</Object>
+
+
+	<light name="p1" type="point">
+		<position value="10 10 10" />
+		<intensity value=".4 .4 .4" />
+		<falloff value="1 0 0" />
+	</light>
+	
+	<light name="p2" type="point">
+		<position value="-10 10 10" />
+		<intensity value=".7 .7 .7" />
+		<falloff value="1 0 0" />
+	</light>
+	
+	<light name="p3" type="point">
+		<position value="-10 10 -10" />
+		<intensity value=".7 .7 .7" />
+		<falloff value="1 0 0" />
+	</light>
+
+</mclScene>
+<admmelastic>
+
+	<Force name="gravity" type="ExplicitForce" >
+		<direction value="0 -9.8 0" />
+	</Force>
+
+	<Force name="nhtet" type="NeoHookeanTet" >
+		<mu value="100000" />
+		<lambda value="100000" />
+		<max_iterations value="5" />
+	</Force>
+
+	<solver>
+		<iterations value="10" />
+		<timestep value="0.06" />
+	</solver>
+</admmelastic>

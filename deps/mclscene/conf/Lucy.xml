@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<mclScene>
+
+	<Object name="lucy" type="TriMesh" >
+		<File value="lucy.ply" />
+		<scale value=".01  .01  .01" />
+		<Material value="pearl" />
+	</Object>
+
+
+</mclScene>

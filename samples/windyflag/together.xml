@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<mclScene>
+
+	<Object name="cloth1" type="plane" >
+
+		<!-- Width and length just provide tesselation -->
+		<width value="30" />
+		<length value="20" />
+
+		<Material value="white_flag" />
+		<Mass value=".5" />
+		<Force value="limit" />
+		<Force value="bend" />
+		<scale value="0.75 0.5 0.5" /> <!-- makes it 1.5m x 1m -->
+		<density_weighted_mass type="bool" value="0" />
+		<translate value="0.035 0 0" /> <!-- so anchor nodes are not inside pole -->
+		
+	</Object>
+	<Object name="pole1" type="cylinder" >
+
+		<tess_l value="10" />
+		<tess_c value="10" />
+
+		<Material value="gray" />
+
+		<translate value="-0.75 -0.75 0" />
+		<rotate value="90 0 0" />
+		<scale value="0.025 0.025 1.5" />
+
+	</Object>
+
+
+	<Object name="cloth2" type="plane" >
+		<width value="30" />
+		<length value="20" />
+		<Material value="white_flag" />
+		<Mass value=".5" />
+		<Force value="nolimit" />
+		<Force value="bend" />
+		<scale value="0.75 0.5 0.5" />
+		<density_weighted_mass type="bool" value="0" />
+		<translate value="3.035 0 0" />
+		
+	</Object>
+	<Object name="pole2" type="cylinder" >
+
+		<tess_l value="10" />
+		<tess_c value="10" />
+
+		<Material value="gray" />
+
+		<translate value="1.5 -0.75 0" />
+		<rotate value="90 0 0" />
+		<scale value="0.025 0.025 1.5" />
+
+	</Object>
+
+
+	<Material name="gray" type="blinnphong" >
+		<Diffuse value=".2  .2  .2" />
+		<specular value=".2  .2  .2" />
+	</Material>
+
+	<Material name="white_flag" type="blinnphong" >
+		<Diffuse value=".7  .7  .7" />
+		<texture value="sca16logo2.png" />
+	</Material>
+
+</mclScene>
+<admmelastic>
+	<Force name="gravity" type="ExplicitForce" >
+		<direction value="0 -9.8 0" />
+	</Force>
+
+	<Force name="wind" type="WindForce" >
+		<direction value="10 0 2" />
+	</Force>
+
+
+	<Force name="limit" type="TriangleStrain" >
+		<limit value=".95 1.05" />
+		<Stiffness value=".05" />
+	</Force>
+
+	<Force name="nolimit" type="TriangleStrain" >
+		<limit value=".95 1.05" />
+		<Stiffness value=".05" />
+		<pd type="bool" value="1" />
+	</Force>
+	
+	<Force name="bend" type="Bend" >
+		<Stiffness value="40" />
+	</Force>
+
+	<solver>
+		<iterations value="30" />
+		<timestep value="0.04" />
+	</solver>
+
+</admmelastic>
+

@@ -1,0 +1,431 @@
+<?xml version="1.0"?>
+<mclScene>
+
+	<light name="p1" type="point">
+		<position type="vec3" value="10 10 10" />
+		<intensity type="vec3" value=".5 .5 .5" />
+		<falloff type="vec3" value="1 0 0" />
+	</light>
+	
+	<light name="p2" type="point">
+		<position type="vec3" value="-10 10 10" />
+		<intensity type="vec3" value=".5 .5 .5" />
+		<falloff type="vec3" value="1 0 0" />
+	</light>
+	
+	<light name="p3" type="point">
+		<position type="vec3" value="-10 10 -10" />
+		<intensity type="vec3" value=".5 .5 .5" />
+		<falloff type="vec3" value="1 0 0" />
+	</light>
+
+
+	<Object name="horse" type="tetmesh" >
+		<File value="horse759" />
+		<scale value="13 13 13" />
+		<translate value="0.02 0.7 0" />
+		<Material value="brown_diff" />
+		<Mass value="10" />
+		<Force value="lintet" />
+	</Object>
+	
+	<Material name="white_diff" type="blinnphong" >
+		<Diffuse value="210  210  210" />
+		<specular value="0 0 0 " />
+	</Material>
+	
+	<Material name="brown_diff" type="blinnphong" >
+		<Diffuse value="107 66 38" />
+		<Specular value=".99  .99  .99" />
+		<shininess value="124" />
+	</Material>
+
+	<Object name="cyl0" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="-3 .5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="-3 .5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl1" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="-1.5 .5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="-1.5 .5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl2" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="0 .5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="0 .5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl3" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="1.5 .5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="1.5 .5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl4" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="3.0 .5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="3.0 .5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl5" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="-2.25 2 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="-2.25 2 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl6" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="-0.75 2 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="-0.75 2 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl7" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="0.75 2 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="0.75 2 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl8" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="2.25 2 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="2.25 2 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl9" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="-3 3.5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="-3 3.5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl10" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="-1.5 3.5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="-1.5 3.5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl11" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="0 3.5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="0 3.5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl12" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="1.5 3.5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="1.5 3.5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl13" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="3 3.5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="3 3.5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl14" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="-2.25 5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="-2.25 5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl15" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="-0.75 5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="-0.75 5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl16" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="0.75 5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="0.75 5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl17" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="2.25 5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="2.25 5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl18" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="-3 6.5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="-3 6.5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl19" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="-1.5 6.5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="-1.5 6.5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl20" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="0.0 6.5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="0 6.5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl21" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="1.5 6.5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="1.5 6.5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+	
+	<Object name="cyl22" type="cylinder" >    
+
+		<tess_l value="30" />
+		<tess_c value="3" />
+		<radius value="0.4" />
+		<translate_copy value="3.0 6.5 0" />  <!-- must be same as "translate" xform below -->
+		<scale_copy value="1 1 1" />        <!-- must be same as "scale" xform below -->
+
+		<Material value="white_diff" />
+
+
+		<translate value="3.0 6.5 0" />
+		<scale value="1 1 1" />
+
+	</Object>
+
+
+</mclScene>
+<admmelastic>
+	<!-- A constant force is applied to everything in the domain -->
+	<Force name="gravity" type="ExplicitForce" >
+		<direction value="0 -9.8 0" />
+	</Force>
+
+	<Force name="lintet" type="LinearTetStrain" >
+		<stiffness value="100000" />
+		<!--<weight value="173" /> -->
+		<weight_scale value="1" />
+	</Force>
+
+	<solver>
+		<iterations value="13" />
+		<timestep value="0.04" />
+	</solver>
+	
+</admmelastic>
+

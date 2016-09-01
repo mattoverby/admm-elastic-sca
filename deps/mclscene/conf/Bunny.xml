@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<mclScene>
+
+	<Object name="bunny2" type="trimesh" >
+
+		<File value="bunny.ply" />
+
+		<Translate value="0 -.06  0" />
+
+		<Material value="gold" />
+	</Object>
+
+</mclScene>

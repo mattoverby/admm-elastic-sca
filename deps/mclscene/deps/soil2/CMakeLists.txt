@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(soil2 C)
+
+set( SOIL2_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/include PARENT_SCOPE )
+
+file(GLOB SOURCES
+	"${CMAKE_CURRENT_SOURCE_DIR}/src/*.c"
+	"${CMAKE_CURRENT_SOURCE_DIR}/src/*.h"
+	"${CMAKE_CURRENT_SOURCE_DIR}/include/*.h")
+
+set( SOIL2_SRCS ${SOURCES} PARENT_SCOPE )

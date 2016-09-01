@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<mclScene>
+
+	<Object name="bunny" type="tetmesh" >
+		<File value="bunny_1124" />
+		<scale value="10 10 10" />
+		<rotate value="20 0 0" />
+		<Mass value="1" />
+		<Material value="CyanPlastic" />
+		<Force value="svktet" />
+	</Object>
+
+</mclScene>
+<admmelastic>
+
+	<solver>
+		<iterations value="10" />
+		<timestep value="0.04" />
+		<realtime value="0" />
+	</solver>
+
+	<Force name="svktet" type="StVKTet" >
+		<mu value="100" />
+		<lambda value="100" />
+		<max_iterations value="5" />
+	</Force>
+
+</admmelastic>

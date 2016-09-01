@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<mclScene>
+
+	<Object name="obj1" type="box" >
+		<width value="20" />
+		<length value="20" />
+		<Material value="red" />
+	</Object>
+
+	<Object name="obj2" type="torus" >
+		<tess_ph value="20" />
+		<tess_th value="50" />
+		<inner_radius value="0.75" />
+		<Material value="emerald" />
+	</Object>
+
+
+	<Material name="red" type="blinnphong">
+		<Diffuse value="1  0  0" />
+	</Material>
+
+</mclScene>
