@@ -45,7 +45,6 @@ public:
 		index_offset=0;
 		num_objects=0;
 		bend_index=0;
-		system = NULL;
 	}
 
 	static bool build_trimesh(
