@@ -51,12 +51,12 @@
 
 	<Force name="admmstyle" type="TriangleStrain" >
 		<limit value=".95 1.05" />
-		<Stiffness value=".05" />
+		<Stiffness value="150" />
 	</Force>
 
 	<Force name="pdstyle" type="TriangleStrain" >
 		<limit value=".95 1.05" />
-		<Stiffness value=".05" />
+		<Stiffness value="150" />
 		<pd  value="1" />
 	</Force>
 	
