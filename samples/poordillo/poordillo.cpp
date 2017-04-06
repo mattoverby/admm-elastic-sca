@@ -87,7 +87,8 @@ int main(int argc, char *argv[]){
 	context = std::unique_ptr<SimContext>( new SimContext() );
 	context->load( conf_ss.str() );
 	setup();
-	context->settings.verbose=0;
+	context->system->settings.verbose=0;
+	context->settings.run_realtime = true;
 	context->initialize();
 
 	for(int i = 0; i < hand.control_points.size(); i++){

@@ -12,7 +12,6 @@
 		<Force value="admmstyle" />
 		<Force value="bend" />
 		<scale value="0.75 0.5 0.5" /> <!-- makes it 1.5m x 1m -->
-		<density_weighted_mass  value="1" />
 		<translate value="0.035 0 0" /> <!-- so anchor nodes are not inside pole -->
 		
 	</Object>
@@ -51,17 +50,11 @@
 
 	<Force name="admmstyle" type="TriangleStrain" >
 		<limit value=".95 1.05" />
-		<Stiffness value="150" />
-	</Force>
-
-	<Force name="pdstyle" type="TriangleStrain" >
-		<limit value=".95 1.05" />
-		<Stiffness value="150" />
-		<pd  value="1" />
+		<Stiffness value="100" />
 	</Force>
 	
 	<Force name="bend" type="Bend" >
-		<Stiffness value="40" />
+		<Stiffness value="20" />
 	</Force>
 
 	<solver>

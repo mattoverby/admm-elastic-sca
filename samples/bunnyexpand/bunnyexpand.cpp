@@ -1,4 +1,4 @@
-// Copyright (c) 2016 University of Minnesota
+// Copyright (c) 2017 University of Minnesota
 // 
 // ADMM-Elastic Uses the BSD 2-Clause License (http://www.opensource.org/licenses/BSD-2-Clause)
 // Redistribution and use in source and binary forms, with or without modification, are
@@ -19,14 +19,10 @@
 
 #include "SimContext.hpp"
 #include "MCL/Application.hpp"
-#include "ArgParser.hpp"
 #include <random>
 
 using namespace mcl;
 using namespace admm;
-
-bool demo_mode = false;
-void step_callback( System *system );
 
 std::unique_ptr<SimContext> context;
 
@@ -37,18 +33,7 @@ std::uniform_real_distribution<double> dis(-0.75,0.75);
 
 int main(int argc, char *argv[]){
 
-	mcl::ArgParser args(argc,argv);
-	demo_mode = args.exists( "demo" );
-	bool single_point_init = args.exists( "point" );
-
-	// Print usage
-	if( args.exists("help") ){
-		std::cout << "Usage:\n\t./bunnyexpand [--demo] [--point]" << std::endl;
-		std::cout << "\tdemo: Turns on save screenshots and exits after 5 seconds" << std::endl;
-		std::cout << "\tpoint: collapses to (0 0 0)" << std::endl;
-		std::cout << std::endl;
-		return 0;
-	}
+	bool single_point_init = false;
 
 	std::stringstream conf_ss; conf_ss << SRC_ROOT_DIR << "/samples/bunnyexpand/bunnyexpand.xml";
 
@@ -56,10 +41,6 @@ int main(int argc, char *argv[]){
 	context = std::unique_ptr<SimContext>( new SimContext );
 	context->load( conf_ss.str() );
 	context->initialize();
-
-	// Add the step callback
-	std::function<void (System*)> step_cb(step_callback);
-	context->system->add_step_callback( step_cb );
 
 	// Move the nodes of the vertices to a bad location
 	if( single_point_init ){
@@ -88,8 +69,6 @@ int main(int argc, char *argv[]){
 	mcl::Application app( context->scene.get(), context.get() );
 	app.settings.gamma_correction = false;
 	app.settings.subdivide_meshes = true;
-	if( demo_mode ){ app.settings.save_frames=true; }
-
 
 	if( single_point_init ){
 		app.zoom = 6.f;
@@ -104,9 +83,3 @@ int main(int argc, char *argv[]){
 }
 
 
-double elapsed_s = 0.f;
-void step_callback( System *system ){
-	if( !demo_mode ){ return; }
-	if( elapsed_s > 5.f ){ exit(0); }
-	elapsed_s += system->timestep_s;
-}

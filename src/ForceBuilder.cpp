@@ -1,4 +1,4 @@
-// Copyright (c) 2016 University of Minnesota
+// Copyright (c) 2017 University of Minnesota
 // 
 // ADMM-Elastic Uses the BSD 2-Clause License (http://www.opensource.org/licenses/BSD-2-Clause)
 // Redistribution and use in source and binary forms, with or without modification, are
@@ -117,19 +117,19 @@ bool ForceBuilder::build_trimesh( std::shared_ptr<trimesh::TriMesh> mesh,
 			bool pd_style = false;
 			if( force.exists("pd") ){ pd_style = force["pd"].as_bool(); } 
 
-			if( pd_style ){
+//			if( pd_style ){
 				// Projective dynamics triangle
-				std::shared_ptr<Force> new_force( new
-					PDTriangleStrain( p0, p1, p2, stiffness, limit[0], limit[1] )
-				);
-				sys_forces->push_back( new_force );
-			} else {
+//				std::shared_ptr<Force> new_force( new
+//					PDTriangleStrain( p0, p1, p2, stiffness, limit[0], limit[1] )
+//				);
+//				sys_forces->push_back( new_force );
+//			} else {
 				// Strain limited triangle
 				std::shared_ptr<Force> new_force( new
 					LimitedTriangleStrain( p0, p1, p2, stiffness, limit[0], limit[1] )
 				);
 				sys_forces->push_back( new_force );
-			}
+//			}
 
 		} // end triangle strain
 
@@ -370,7 +370,7 @@ bool ForceBuilder::build_tetmesh( std::shared_ptr<mcl::TetMesh> mesh,
 //std::cout << "tet: " << t << std::endl;
 
 		}
-		
+/*
 		else if( force_type == "anisotropic" ){
 			
 			if( !force.exists("stiffness") ){
@@ -402,7 +402,7 @@ bool ForceBuilder::build_tetmesh( std::shared_ptr<mcl::TetMesh> mesh,
 			sys_forces->push_back( new_force );
 
 		}
-		
+*/
 		else if( force_type == "volpres" ){
 			
 			if( !force.exists("stiffness") ){
@@ -428,7 +428,7 @@ bool ForceBuilder::build_tetmesh( std::shared_ptr<mcl::TetMesh> mesh,
 			double rangeMax = force["range_max"].as_double();
 						
 			std::shared_ptr<Force> new_force( new
-				LinearTetVolume( p[0], p[1], p[2], p[3], rangeMin, rangeMax, stiffness )
+				TetVolume( p[0], p[1], p[2], p[3], stiffness, rangeMin, rangeMax )
 			);
 			sys_forces->push_back( new_force );
 			

@@ -1,4 +1,4 @@
-// Copyright (c) 2016 University of Minnesota
+// Copyright (c) 2017 University of Minnesota
 // 
 // ADMM-Elastic Uses the BSD 2-Clause License (http://www.opensource.org/licenses/BSD-2-Clause)
 // Redistribution and use in source and binary forms, with or without modification, are
@@ -65,10 +65,10 @@ void SimContext::load( std::string config_file ){
 			// Loop over them and set relavent ones
 			for( int i=0; i<params.size(); ++i ){
 
-				if( params[i].tag=="iterations" ){ settings.solver_iters = params[i].as_int(); } 
-				else if( params[i].tag=="timestep" ){ settings.timestep_s = params[i].as_double(); }
+				if( params[i].tag=="iterations" ){ system->settings.admm_iters = params[i].as_int(); } 
+				else if( params[i].tag=="timestep" ){ system->settings.timestep_s = params[i].as_double(); }
 				else if( params[i].tag=="realtime" ){ settings.run_realtime = params[i].as_bool(); }
-				else if( params[i].tag=="verbose" ){ settings.verbose = params[i].as_int(); }
+				else if( params[i].tag=="verbose" ){ system->settings.verbose = params[i].as_int(); }
 
 			} // end loop params
 
@@ -168,8 +168,7 @@ void SimContext::initialize(){
 	//
 	// Finalize the system. It has own error messages
 	//
-	system->verbose( settings.verbose );
-	if( !system->initialize( settings.timestep_s ) ){ throw std::runtime_error("\nExiting..."); }
+	if( !system->initialize() ){ throw std::runtime_error("\nExiting..."); }
 
 } // end init
 
@@ -178,7 +177,7 @@ bool SimContext::update( mcl::SceneManager *scene_ ){
 
 	using map_it=std::unordered_map< int, std::pair< int, int > >::const_iterator;
 
-	#pragma omp parallel for
+#pragma omp parallel for
 	for( int i=0; i<system_to_scene_map.size(); ++i ){
 		map_it it = system_to_scene_map.begin(); std::advance(it, i); // even though advance is slow, it's needed for parallel map loopage
 		trimesh::point p( system->m_x[ it->first*3 + 0 ], system->m_x[ it->first*3 + 1 ], system->m_x[ it->first*3 + 2 ] );
@@ -187,7 +186,7 @@ bool SimContext::update( mcl::SceneManager *scene_ ){
 		mesh->vertices[ it->second.second ] = p;
 	} // end loop map
 
-	#pragma omp parallel for
+#pragma omp parallel for
 	for( int i=0; i<scene->objects.size(); ++i ){
 		scene->objects[i]->update();
 	}
@@ -198,12 +197,12 @@ bool SimContext::update( mcl::SceneManager *scene_ ){
 
 bool SimContext::step( const mcl::SceneManager *scene_, float screen_dt ){
 
-	if( !settings.run_realtime ){ return system->step( settings.solver_iters ); }
+	if( !settings.run_realtime ){ return system->step(); }
 
 	double timeleft = screen_dt;
 	while( timeleft > 0.0 ){
-		if( !system->step( settings.solver_iters ) ){ return false; }
-		timeleft -= system->timestep_s;
+		if( !system->step() ){ return false; }
+		timeleft -= system->settings.timestep_s;
 	}
 
 	return true;

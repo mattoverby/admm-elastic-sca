@@ -1,4 +1,4 @@
-// Copyright (c) 2016 University of Minnesota
+// Copyright (c) 2017 University of Minnesota
 // 
 // ADMM-Elastic Uses the BSD 2-Clause License (http://www.opensource.org/licenses/BSD-2-Clause)
 // Redistribution and use in source and binary forms, with or without modification, are
@@ -28,18 +28,14 @@ class SimContext : public mcl::Simulator {
 public:
 	// SolverSettings are set by the XML file.
 	// You can also manually change these after the scene file is loaded.
-	struct SolverSettings {
-		int solver_iters; // <iterations value="20" />
-		double timestep_s; // <timestep value="0.04" />
-		int verbose; // <verbose value="1" />
+	struct Settings {
 		bool run_realtime; // <realtime value="1" />
-		SolverSettings() : solver_iters(20), timestep_s(0.04), verbose(1), run_realtime(true) {}
-	};
+		Settings() : run_realtime(false) {}
+	} settings;
 
 	// Public context data
 	std::shared_ptr<admm::System> system;
 	std::shared_ptr<mcl::SceneManager> scene;
-	SolverSettings settings;
 
 	// SimContext constructor creates scene and system,
 	// as well as sets up the ForceBuilder.
