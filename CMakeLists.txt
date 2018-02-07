@@ -22,16 +22,16 @@ option(ADMME_BUILD_SAMPLES "Build admm-elastic samples" OFF)
 
 
 # admm-elastic, submodule in deps/
-set( ADMME_DIR "${CMAKE_CURRENT_SOURCE_DIR}/deps/admm-elastic" )
+set( ADMME_DIR "${CMAKE_CURRENT_SOURCE_DIR}/deps/admm-elastic-sca" )
 add_subdirectory( ${ADMME_DIR} )
 include_directories( ${ADMME_INCLUDE_DIRS} )
 
 # Eigen library (header only), included in admm-elastic's deps/
-set( EIGEN_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/deps/admm-elastic/deps/Eigen3" )
+set( EIGEN_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/deps/admm-elastic-sca/deps/Eigen3" )
 include_directories( SYSTEM ${EIGEN_INCLUDE} )
 
 # CppOptimizationLibrary (header only), also in admm-elastic's deps/
-set( CPPMIN_DIR "${CMAKE_CURRENT_SOURCE_DIR}/deps/admm-elastic/deps/cppoptlib" )
+set( CPPMIN_DIR "${CMAKE_CURRENT_SOURCE_DIR}/deps/admm-elastic-sca/deps/cppoptlib" )
 include_directories( ${CPPMIN_DIR}/include )
 
 # OpenMP
