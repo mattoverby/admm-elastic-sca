@@ -1,5 +1,5 @@
 
-This is the code used for our original SCA paper. For the extended journal submission (TVCG) which includes self collisions and other improvements, [please visit the other repository](https://github.com/mattoverby/admm-elastic).
+This is the code used in our original SCA paper. For the extended journal submission (TVCG) which includes self collisions and other improvements, [please visit the other repository](https://github.com/mattoverby/admm-elastic).
 
 # admm-elastic-sca
 
