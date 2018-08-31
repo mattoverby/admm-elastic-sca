@@ -1,7 +1,7 @@
 
-# admm-elastic-sca
-
 This is the code used for our original SCA paper. For the extended journal submission (TVCG) which includes self collisions and other improvements, [please visit the other repository](https://github.com/mattoverby/admm-elastic).
+
+# admm-elastic-sca
 
 [ADMM ⊇ Projective Dynamics: Fast Simulation of General Constitutive Models](http://rahul.narain.name/admm-pd/)  
 [Rahul Narain](http://rahul.narain.name/), [Matthew Overby](http://www.mattoverby.net/), and [George E. Brown](http://www-users.cs.umn.edu/~brow2327/)  
