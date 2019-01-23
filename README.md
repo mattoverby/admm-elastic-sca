@@ -9,17 +9,17 @@ University of Minnesota
 
 # citation
 
-BibTex:
+BibTex:  
 
-@article{overby2017admmpd, 
-author={Overby, Matthew and Brown, George E. and Li, Jie and Narain, Rahul},
-journal={IEEE Transactions on Visualization and Computer Graphics}, 
-title={ADMM $\supseteq$ Projective Dynamics: Fast Simulation of Hyperelastic Models with Dynamic Constraints}, 
-year={2017}, 
-volume={23}, 
-number={10}, 
-pages={2222-2234}, 
-doi={10.1109/TVCG.2017.2730875}, 
-ISSN={1077-2626}, 
-month={Oct},
-}
+	@article{overby2017admmpd, 
+	author={Overby, Matthew and Brown, George E. and Li, Jie and Narain, Rahul},
+	journal={IEEE Transactions on Visualization and Computer Graphics}, 
+	title={ADMM $\supseteq$ Projective Dynamics: Fast Simulation of Hyperelastic Models with Dynamic Constraints}, 
+	year={2017}, 
+	volume={23}, 
+	number={10}, 
+	pages={2222-2234}, 
+	doi={10.1109/TVCG.2017.2730875}, 
+	ISSN={1077-2626}, 
+	month={Oct},
+	}
